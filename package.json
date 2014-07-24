@@ -1,0 +1,20 @@
+{
+  "name": "url-match",
+  "version": "0.0.1",
+  "description": "An implementation of a simple url matcher, as defined by https://developer.chrome.com/extensions/match_patterns.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "url",
+    "matcher",
+    "chrome",
+    "extension"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "nodeunit": "^0.9.0"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "url-match",
+  "version": "0.0.1",
+  "authors": [
+    "Tyler Rhodes <tyler.s.rhodes@gmail.com>",
+    "Jose Falcon <jose.e.falcon@gmail.com>"
+  ],
+  "description": "An implementation of a simple url matcher, as defined by https://developer.chrome.com/extensions/match_patterns.",
+  "main": "index.js",
+  "keywords": [
+    "url",
+    "matcher",
+    "chrome",
+    "extension"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
