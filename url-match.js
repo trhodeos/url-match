@@ -13,11 +13,11 @@
         // [3] No module loader (plain <script> tag) - put directly in global namespace
         factory(window['um'] = {});
     }
-} (function(um, require) {
-  um.Matcher = function(pattern) {
+} (function(exp, require) {
+  exp.Matcher = function(pattern) {
 
   };
-  um.Matcher.prototype.matches = function(string) {
+  exp.Matcher.prototype.matches = function(string) {
     return true;
   };
 }));
