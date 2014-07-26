@@ -14,12 +14,46 @@
         factory(window['um'] = {});
     }
 } (function(exp, require) {
-  exp.Matcher = function(pattern) {
 
+  /**
+   *
+   */
+  var Pattern = function(patternString) {
+    
   };
-  exp.Matcher.prototype.matches = function(string) {
+
+  /**
+   * Is this pattern valid with regards to https://developer.chrome.com/extensions/match_patterns
+   * @return true if valid, false otherwise
+   */
+  Pattern.prototype.isValid = function() {
+    return true;   
+  };
+
+  var PatternFactory = {};
+  PatternFactory.create = function(obj) {
+    if (obj instanceof Pattern) {
+      return obj;
+    }
+
+    // TODO(tyler.s.rhodes): caching of some sort
+    return new Pattern(obj);
+  };
+
+  var Matcher = function(pattern) {
+    this.pattern_ = PatternFactory.create(pattern);
+    if (!this.pattern_.isValid()) {
+      // TODO(tyler.s.rhodes): what to do?
+    }
+  };
+  Matcher.prototype.matches = function(string) {
     return true;
   };
+
+  // exports!
+  exp.Matcher = Matcher;
+  exp.Pattern = Pattern;
+  exp.PatternFactory = PatternFactory;
 }));
 
 
