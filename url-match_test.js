@@ -4,20 +4,34 @@ module.exports = {
   Pattern: {
     testValidity: function(test) {
       var cases = [
-        "http://*.google.com"
+        "http://*/*",
+        "http://*/foo*",
+        "https://*.google.com/foo*bar",
+        "http://example.org/foo/bar.html",
+        "file:///foo*",
+        "http://127.0.0.1/*",
+        "*://mail.google.com/*",
+        "chrome-extension://*/*",
+        "<all_urls>"
       ];
       for (var i = 0; i < cases.length; i++) {
-        test.equal(true, new um.Pattern(cases[i]).isValid());
+        test.ok(new um.Pattern(cases[i]).isValid(),
+            cases[i] + " should be valid, but is not.");
       }
       test.done();
     },
       
     testInvalidity: function(test) {
       var cases = [
-        "http://*"
+        "http://www.google.com",
+        "http://*foo/bar",
+        "http://foo.*.bar/baz",
+        "http:/bar",
+        "foo://*"
       ];
       for (var i = 0; i < cases.length; i++) {
-        test.equal(false, new um.Pattern(cases[i]).isValid());
+        test.ok(!new um.Pattern(cases[i]).isValid(),
+            cases[i] + " shouldn't be valid, but is.");
       }
       test.done();
     }
