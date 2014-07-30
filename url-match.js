@@ -52,7 +52,7 @@
         if (matchResults.length > 2) {
           output += matchResults[2].replace(/\./, '\\.').replace(/\*/, '[^\\/]*');
         }
-        output += "\\/.*$";
+        output += '\\/.*$';
         this.matcher_ = new RegExp(output);
       }
     }
@@ -61,7 +61,7 @@
 
   Matcher.prototype.matches = function(string) {
     if (!this.isValid()) {
-      console.log("Pattern " + this.patternString_ + " is not valid! Not matching any strings.");
+      console.log('Pattern "' + this.patternString_ + '" is not valid! Not matching any strings.');
       return false;
     }
     return this.getMatcherRegex_().test(string);
