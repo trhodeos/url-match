@@ -45,13 +45,67 @@ var validCases = {
       "http://www.google.com/foobar",
       "https://www.google.com/foobard"
     ]
+  },
+  "http://example.org/foo/bar.html": {
+    valid: [
+      "http://example.org/foo/bar.html"
+    ],
+    invalid: [
+      "http://example.org/foo/bar.htm",
+      "http://example.org/foo/bar.htmls"
+    ]
+  },
+  "file:///foo*": {
+    valid: [
+      "file:///foo",
+      "file:///foobar"
+    ],
+    invalid: [
+      "files://foo",
+      "file://fo",
+      "file://fooo"
+    ]
+  },
+  "http://127.0.0.1/*": {
+    valid: [
+      "http://127.0.0.1/",
+      "http://127.0.0..//",
+      "http://127.0.0../foobar123"
+    ],
+    invalid: [
+      "http://127.0.0../",
+      "http://127.0.01/"
+    ]
+  },
+  "*://mail.google.com/*": {
+    valid: [
+      "http://mail.google.com/",
+      "https://mail.google.com/",
+      "https://mail.google.com/foo",
+      "chrome-extension://mail.google.com/"
+    ],
+    invalid: [
+      "foo://mail.google.com/",
+      "https://mail.google.com"
+    ]
+  },
+  "chrome-extension://*/*": {
+    "valid": [
+      "chrome-extension://foo/bar",
+      "chrome-extension:///bar"
+    ],
+    "invalid": [
+      "chrome-extension://"
+    ]
+  },
+  "<all_urls>": {
+    "valid": [
+      "http://google.com"
+      ],
+    "invalid": [
+      "blah://google.com"
+      ]
   }
-//  "http://example.org/foo/bar.html",
-//  "file:///foo*",
-//  "http://127.0.0.1/*",
-//  "*://mail.google.com/*",
-//  "chrome-extension://*/*",
-//  "<all_urls>"
 }
 
 module.exports = {
