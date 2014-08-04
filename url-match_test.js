@@ -139,11 +139,11 @@ module.exports = {
       var matcher = new um.Matcher(key);
       for (var i = 0; i < curCase.valid; i++) {
         var testString = curCase.valid[i];
-        test.ok(matcher.matches(testString), key + " should match " + testString + ", but does not!");
+        test.ok(matcher.test(testString), key + " should match " + testString + ", but does not!");
       }
       for (var i = 0; i < curCase.invalid; i++) {
         var testString = curCase.invalid[i];
-        test.ok(!matcher.matches(testString), key + " shouldn't match " + testString + ", but does!");
+        test.ok(!matcher.test(testString), key + " shouldn't match " + testString + ", but does!");
       }
     }
     test.done();

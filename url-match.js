@@ -26,7 +26,7 @@
 
     this.isValid.bind(this);
     this.getMatcherRegex_.bind(this);
-    this.matches.bind(this);
+    this.test.bind(this);
   };
 
   // split this regex out for regex-clarity.
@@ -59,7 +59,7 @@
     return this.matcher_;
   };
 
-  Matcher.prototype.matches = function(string) {
+  Matcher.prototype.test = function(string) {
     if (!this.isValid()) {
       console.log('Pattern "' + this.patternString_ + '" is not valid! Not matching any strings.');
       return false;
