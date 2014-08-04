@@ -2,11 +2,10 @@
   "name": "url-match",
   "version": "0.0.1",
   "authors": [
-    "Tyler Rhodes <tyler.s.rhodes@gmail.com>",
-    "Jose Falcon <jose.e.falcon@gmail.com>"
+    "Tyler Rhodes <tyler.s.rhodes@gmail.com>"
   ],
   "description": "An implementation of a simple url matcher, as defined by https://developer.chrome.com/extensions/match_patterns.",
-  "main": "index.js",
+  "main": "url-match.js",
   "keywords": [
     "url",
     "matcher",
